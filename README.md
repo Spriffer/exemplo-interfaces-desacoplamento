@@ -1,32 +1,28 @@
 # Exemplo de Interface e Desacoplamento
 
-Este projeto apresenta um exemplo prático do uso de interfaces para desacoplar componentes de um sistema, utilizando a linguagem Java.
+Exemplo prático do uso de interfaces para desacoplar componentes de um sistema, utilizando Java.
 
 ## Objetivo
 
-Demonstrar como uma interface pode definir um contrato que permite utilizar diferentes implementações sem que o componente consumidor precise conhecer os detalhes da implementação concreta.
+Demonstrar como uma interface permite utilizar diferentes implementações sem que o componente consumidor dependa diretamente delas.
 
-## Estrutura do projeto
+## Estrutura
 
-* `Notificacao.java` — interface que define o contrato.
-* `EmailNotificacao.java` — implementação da interface para envio de e-mail.
-* `SmsNotificacao.java` — implementação da interface para envio de SMS.
-* `SistemaNotificacao.java` — componente consumidor que depende apenas da interface.
-* `Main.java` — classe responsável por executar o exemplo.
+* `Notificacao.java` — define a interface e o contrato.
+* `EmailNotificacao.java` — implementação para e-mail.
+* `SmsNotificacao.java` — implementação para SMS.
+* `SistemaNotificacao.java` — componente consumidor.
+* `Main.java` — executa o exemplo.
 
 ## Funcionamento
 
-A interface `Notificacao` define o método `enviar`, estabelecendo o contrato que deve ser seguido pelas implementações.
+A interface `Notificacao` define o método `enviar()`.
 
-As classes `EmailNotificacao` e `SmsNotificacao` implementam a interface de maneiras diferentes.
+`EmailNotificacao` e `SmsNotificacao` implementam essa interface de formas diferentes.
 
-O `SistemaNotificacao` depende apenas da interface `Notificacao`, e não diretamente das classes `EmailNotificacao` ou `SmsNotificacao`.
-
-Isso permite substituir uma implementação por outra sem precisar modificar o componente consumidor.
+O `SistemaNotificacao` depende apenas da interface `Notificacao`, permitindo utilizar qualquer implementação sem alterar seu código.
 
 ## Exemplo
-
-O sistema pode receber diferentes implementações:
 
 ```java
 Notificacao email = new EmailNotificacao();
@@ -36,13 +32,13 @@ Notificacao sms = new SmsNotificacao();
 SistemaNotificacao sistemaSms = new SistemaNotificacao(sms);
 ```
 
-## Saída esperada
+## Saída
 
 ```text
 Enviando e-mail: Pedido realizado com sucesso!
 Enviando SMS: Seu código é 123456.
 ```
 
-## Conceito demonstrado
+## Conceito
 
-O projeto demonstra o uso de uma interface como contrato para promover o desacoplamento entre componentes. O consumidor conhece apenas a interface `Notificacao`, permitindo que diferentes implementações sejam utilizadas sem alterar seu código.
+O exemplo demonstra como interfaces ajudam a reduzir o acoplamento entre componentes, permitindo trocar ou adicionar implementações sem modificar o componente consumidor.
