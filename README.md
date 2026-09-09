@@ -8,11 +8,11 @@ Demonstrar como uma interface permite utilizar diferentes implementações sem q
 
 ## Estrutura
 
-* `Notificacao.java` — define a interface e o contrato.
-* `EmailNotificacao.java` — implementação para e-mail.
-* `SmsNotificacao.java` — implementação para SMS.
-* `SistemaNotificacao.java` — componente consumidor.
-* `Main.java` — executa o exemplo.
+* `Notificacao.java` - define a interface e o contrato.
+* `EmailNotificacao.java` - implementação para e-mail.
+* `SmsNotificacao.java` - implementação para SMS.
+* `SistemaNotificacao.java` - componente consumidor.
+* `Main.java` - executa o exemplo.
 
 ## Funcionamento
 
